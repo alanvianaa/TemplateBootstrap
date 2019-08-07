@@ -15,4 +15,9 @@ public class InicioController {
     public String login() {
         return "login";
     }
+
+    @GetMapping("/charts")
+    public String charts() {
+        return "charts";
+    }
 }
