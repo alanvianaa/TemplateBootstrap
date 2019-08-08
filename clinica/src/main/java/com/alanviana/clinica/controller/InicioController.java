@@ -11,7 +11,8 @@ public class InicioController {
     public String inicio() {
         return "index";
     }
-    @GetMapping("/oi")
+
+   @GetMapping("/login")
     public String login() {
         return "login";
     }
