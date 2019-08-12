@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width" />
+        <title>Lista de Cadastros</title>
+    </head>
+    <body>
+        <div layout:fragment="content" class="panel panel-default" style="margin: 10px">
+
+            <div class="panel-heading">
+                <h1 class="panel-title">Cadastros</h1>
+            </div>
+            <div class="panel-body">
+
+                <form class="form-inline" method="POST"
+                      th:object="${cadastro}"
+                      th:action="@{/cadastros}"
+                      style="margin: 20px 0">
+                    <div class="form-group">
+                        <input type="number" class="form-control"
+                               placeholder="Ano" th:field="*{ano}"/>
+                        <input type="text" class="form-control"
+                               placeholder="Numero" th:field="*{numero}"/>
+                        <input type="text" class="form-control"
+                               placeholder="nh" th:field="*{nh}"/>
+                        <input type="text" class="form-control"
+                               placeholder="Especie" th:field="*{especie}"/>
+                        <input type="text" class="form-control"
+                               placeholder="Sexo" th:field="*{sexo}"/>
+                        <input type="text" class="form-control"
+                               placeholder="Idade" th:field="*{idade}"/>
+                        <input type="text" class="form-control"
+                               placeholder="Raça" th:field="*{raca}"/>
+                        <input type="text" class="form-control"
+                               placeholder="Material" th:field="*{material}"/>
+                        <input type="text" class="form-control"
+                               placeholder="Diagnostico" th:field="*{diagnostico}"/>
+
+                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                    </div>
+                </form>
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>ano</th>
+                        <th>numero</th>
+                        <th>nh</th>
+                        <th>especie</th>
+                        <th>sexo</th>
+                        <th>idade</th>
+                        <th>raca</th>
+                        <th>material</th>
+                        <th>diagnostico</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="cadastro:${cadastros}">
+                        <td th:text="${cadastro.id}" ></td>
+                        <td th:text="${cadastro.ano}" ></td>
+                        <td th:text="${cadastro.numero}" ></td>
+                        <td th:text="${cadastro.nh}" ></td>
+                        <td th:text="${cadastro.especie}" ></td>
+                        <td th:text="${cadastro.sexo}" ></td>
+                        <td th:text="${cadastro.idade}" ></td>
+                        <td th:text="${cadastro.raca}" ></td>
+                        <td th:text="${cadastro.material}" ></td>
+                        <td th:text="${cadastro.diagnostico}" ></td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </body>
+</html>
