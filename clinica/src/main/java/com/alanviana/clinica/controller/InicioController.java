@@ -47,7 +47,7 @@ public class InicioController {
     @PostMapping("/cadastro")
     public String salvar(Cadastro cadastro) {
         this.cadastros.save(cadastro);
-        return "redirect:/cadastros";
+        return "redirect:/cadastro";
     }
 
 

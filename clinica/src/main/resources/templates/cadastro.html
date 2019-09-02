@@ -14,7 +14,7 @@
                 <h1 class="panel-title">Cadastros</h1>
             </div>
             <div class="panel-body">
-
+<!--
                 <form class="form-inline" method="POST"
                       th:object="${cadastro}"
                       th:action="@{/cadastros}"
@@ -42,8 +42,14 @@
                         <button type="submit" class="btn btn-primary">Adicionar</button>
                     </div>
                 </form>
-
-                <table class="table">
+-->
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <i class="fas fa-table"></i>
+                        Data Table Example</div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -76,6 +82,9 @@
                     </tbody>
                 </table>
             </div>
+                    </div>
+                </div>
+
 
         </div>
 
